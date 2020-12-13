@@ -24,6 +24,18 @@ public class Programa {
 		Reserva reserva = new Reserva(numeroQuarto, dataHoraEntrada, dataHoraSaida);
 		
 		System.out.println(reserva);
+		
+		System.out.println("INSIRA AS NOVAS DATAS DA RESERVA");
+		System.out.print("Digite a nova data de checkIn:");
+		dataHoraEntrada = sdf.parse(sc.next()); 
+		System.out.print("Digite a nova data de checkOut:");
+		dataHoraSaida = sdf.parse(sc.next());
+			
+		String erro = reserva.atualizaEstadia(dataHoraEntrada, dataHoraSaida);
+		if (erro != null) {
+			System.out.println("Erro durante a reserva" + erro);
+		}
+		
 	}
 
 }
